@@ -1,4 +1,5 @@
 import Array.*;
+import ArrayList.Banr;
 
 import java.io.Console;
 
@@ -75,10 +76,16 @@ public class Main {
         BinarySearch bs = new BinarySearch();
         int key = 77;
         int[] num = {13, 24, 34, 46, 52, 63, 77, 89, 91, 100};
-        int val = BinarySearch.binarySearch(num, 0, 9, key);
+        int val = bs.binarySearch(num, 0, 9, key);
         System.out.println(val);
         System.out.println();
 
+        try {
+            Banr.banr();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
 
     }
 }

@@ -1,7 +1,7 @@
 package Array;
 
 public class BinarySearch {
-    public static int binarySearch(int[] array, int lowerbound, int upperbound, int key) {
+    public int binarySearch(int[] array, int lowerbound, int upperbound, int key) {
         int position;
         int comparisonCount = 1;    // counting the number of comparisons (optional)
 

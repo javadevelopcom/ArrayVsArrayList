@@ -1,4 +1,4 @@
-package Array;
+package myArray;
 
 public class MatrixFill {
 

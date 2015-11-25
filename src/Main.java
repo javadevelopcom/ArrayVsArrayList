@@ -1,7 +1,8 @@
-import Array.*;
-import ArrayList.Banr;
+import myArray.*;
+import myArrayList.Banr;
+import myArrayList.MyList;
 
-import java.io.Console;
+import java.util.Arrays;
 
 /**
  * Array has FIXED LENGTH
@@ -20,79 +21,90 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println();
+        Print.ln("\n");
 
-        System.out.println("One-dimensional array (or single dimension array) is a type of linear array.");
-        System.out.println("Accessing its elements involves a single subscript which can either represent a row or column index.");
+        Print.ln("One-dimensional array (or single dimension array) is a type of linear array.");
+        Print.ln("Accessing its elements involves a single subscript which can either represent a row or column index.");
         Array1D a1 = new Array1D();
         a1.arr1d();
-        System.out.println();
+        Print.ln("\n");
+
+        Print.ln("Result of Filling the Array using (Arrays.fill):");
+        ArrayFill af = new ArrayFill();
+        af.arFill();
         System.out.println();
 
-        System.out.println("Two-dimensional array, the element with indices i,j would have address B + c * i + d * j, ");
-        System.out.println("where the coefficients c and d are the row and column address increments, respectively.");
+        Print.ln("Two-dimensional array, the element with indices i,j would have address B + c * i + d * j, ");
+        Print.ln("where the coefficients c and d are the row and column address increments, respectively.");
         Array2D a2 = new Array2D();
         a2.arr2d();
         System.out.println();
 
-        System.out.println("Matrix:");
+        Print.ln("Matrix:");
         Matrix m1 = new Matrix();
         m1.matr();
         System.out.println();
 
-        System.out.println("Result of Filling the Matrix:");
+        Print.ln("Result of Filling the Matrix:");
         MatrixFill m2 = new MatrixFill();
         m2.matrfill();
         System.out.println();
 
-        System.out.println("Result of Creating a Matrix of String values:");
+        Print.ln("Result of Creating a Matrix of String values:");
         MatrixString m3 = new MatrixString();
         m3.matrString();
         System.out.println();
 
-        System.out.println("Result of 3 Parallel arrays with the same number of elements that work in tandem to organize data:");
+        Print.ln("Result of 3 Parallel arrays with the same number of elements that work in tandem to organize data:");
         ParallelArrays a3 = new ParallelArrays();
         a3.arrParallel();
         System.out.println();
 
-        System.out.println("Sequential search of key value:");
+        Print.ln("Sequential search of key value (HP)");
         String[] myStringArray = {"Dell", "Sony", "Apple", "ASUS", "Aceer", "HP", "HP"};
-        SequentialSearch ss = new SequentialSearch();
         String keyValue = "HP";
         int values = SequentialSearch.search(myStringArray, keyValue);
-        System.out.println(values);
-        System.out.println();
+        Print.ln("in Array: " + Arrays.toString(myStringArray) + "\n" + values + "\n");
 
-        System.out.println("BREAK and boolean search of key value:");
+        Print.ln("BREAK and boolean search of key value (4)");
         int[] myIntArray = {1, 2, 2, 2, 3, 4, 1, 6, 8, 8, 0, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1, 1, 1, 2, 0, 7};
-        BreakBooleanSearch bb = new BreakBooleanSearch();
         int number = 4;
         int value = BreakBooleanSearch.searchBreak(myIntArray, number);
-        System.out.println(value);
-        System.out.println();
+        Print.ln("in Array: " + Arrays.toString(myIntArray) + "\n" + value + "\n");
 
-        System.out.println("Binary search method accepts a pre-sorted array.");
-        System.out.println("Result:");
+        Print.ln("Binary search method (accepts a pre-sorted array) of key value (77)");
         BinarySearch bs = new BinarySearch();
         int key = 77;
         int[] num = {13, 24, 34, 46, 52, 63, 77, 89, 91, 100};
         int val = bs.binarySearch(num, 0, 9, key);
-        System.out.println(val);
-        System.out.println();
+        Print.ln("in Array: " + Arrays.toString(num) + "\n" + val);
+
+        System.out.println("Binary search (Arrays.binarySearch) of key value (100):" + "\n" + Arrays.binarySearch(num, 100) + "\n");
+
 
         try {
             Banr.banr();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println();
+        Print.ln("\n");
 
+        MyList list = new MyList();
+        list.myListOperations();
+
+        /* вывод на экран */
     }
+
 }
-// http://mathbits.com/MathBits/Java/arrays/arrays.htm
 
 /**
+ * С ArrayList работать проще и удобнее, чем с массивами. Можно без проблем добавлять новые элементы, в том числе и в середину листа. А в случае использования обычного массива вам придётся заново выделять память и перезаписывать элементы, так как размер массива поменять нельзя, после того как была выделена память.
+ * <p>
+ * Работа с массивом быстрее и можно использовать массив, если точно знаете заранее размер массива и вам не придется его динамически менять, делать вставки и т.д.
+ * <p>
+ * http://mathbits.com/MathBits/Java/arrays/arrays.htm
  * http://introcs.cs.princeton.edu/java/95linear/
+ * http://developer.alexanderklimov.ru/android/java/array.php
  * <p>
  * http://www.codejava.net/java-core/collections/sorting-list-collections-examples
  * http://www.codejava.net/java-core/the-java-language/notes-about-arrays-in-java

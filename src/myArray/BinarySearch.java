@@ -1,4 +1,4 @@
-package Array;
+package myArray;
 
 public class BinarySearch {
     public int binarySearch(int[] array, int lowerbound, int upperbound, int key) {
@@ -10,16 +10,16 @@ public class BinarySearch {
 
         while ((array[position] != key) && (lowerbound <= upperbound)) {
             comparisonCount++;
-            if (array[position] > key)             // If the number is > key, ..
-            {                                              // decrease position by one.
+            if (array[position] > key)                   // If the number is > key, ..
+            {                                            // decrease position by one.
                 upperbound = position - 1;
             } else {
-                lowerbound = position + 1;    // Else, increase position by one.
+                lowerbound = position + 1;               // Else, increase position by one.
             }
             position = (lowerbound + upperbound) / 2;
         }
         if (lowerbound <= upperbound) {
-            System.out.println("The number was found in array subscript [" + position+"]");
+            System.out.println("The number was found in array subscript [" + position + "]");
             System.out.println("The binary search found the number after " + comparisonCount +
                     " comparisons.");
             // printing the number of comparisons is optional

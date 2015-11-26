@@ -2,7 +2,8 @@ package myArray;
 
 public class ParallelArrays {
 
-    public void arrParallel() {
+    public static void arrParallel() {
+        System.out.println("\n" + "Result of 3 Parallel arrays with the same number of elements that work in tandem to organize data:");
 
         String[] title = {"HTC", "iPhone", "Samsung"};
         int[] amount = {100, 320, 45};

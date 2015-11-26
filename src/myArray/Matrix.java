@@ -2,7 +2,8 @@ package myArray;
 
 public class Matrix {
 
-    public void matr() {
+    public static void matr() {
+        System.out.println("Matrix is a rectangular array of numbers, symbols, or expressions:" + "\n");
 
         int[][] matrix = {
                 {10, 10, 10, 10, 10},
@@ -17,4 +18,3 @@ public class Matrix {
         }
     }
 }
-

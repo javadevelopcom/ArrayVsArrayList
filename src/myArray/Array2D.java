@@ -2,7 +2,9 @@ package myArray;
 
 public class Array2D {
 
-    public void arr2d() {
+    public static void arr2d() {
+        System.out.println("Two-dimensional array, the element with indices i,j would have address B + c * i + d * j, ");
+        System.out.println("where the coefficients c and d are the row and column address increments, respectively");
 
         int[][] array2d = new int[2][2];
 
@@ -17,4 +19,3 @@ public class Array2D {
         }
     }
 }
-

@@ -6,61 +6,79 @@ import java.util.*;
 
 public class MyList {
 
-    public void myListOperations() {
+    private List<String> listZero = new ArrayList<>();
+    private List<String> listEd = new ArrayList<>();
 
-        List<Object> listOne = new ArrayList<>();
-        listOne.add(1);
-        listOne.add(1);
-        listOne.add(1);
-        listOne.add(1);
-        listOne.add(1);
-        listOne.add(10);
-        int duplicate = Collections.frequency(listOne, 1);
-        System.out.println("Result of operations with List<Integer> listOne:" + "\n" + listOne + "\n");
-        System.out.println("Result of Collections.frequency(listOne, 1):" + "\n" + duplicate + "\n");
+    public void initializationZeroEd() {
 
-        List<Integer> listTwo = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        listTwo.set(0, 100);
-//        listTwo.add(1);  // java.lang.UnsupportedOperationException
-//        listTwo.clear();  // java.lang.UnsupportedOperationException
+        listZero.add("Zero");
+        listZero.add("Zero");
+        listZero.add("Zero");
+        listZero.add("Zero");
+        listZero.add("Zero");
+        listZero.add("Zero");
+        listEd.add("Ed");
+        listEd.add("Ed");
+        listEd.add("Ed");
+        listEd.add("Ed");
+        listEd.add("Ed");
+        listEd.add("Ed");
+        listEd.remove(1);
+        listZero.remove("Zero");
+        listZero.add("Ed");
+    }
+
+    public void initializationNum() {
+
+        List<Integer> listNum = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        listNum.set(0, 100);
+//        listTwo.add(1);        // java.lang.UnsupportedOperationException
+//        listTwo.remove(1);     // java.lang.UnsupportedOperationException
+//        listTwo.clear();       // java.lang.UnsupportedOperationException
+
+        System.out.println("List<Integer> listNum:" + "\n" + listNum + "\n");
+    }
+
+    public void repeatedValue() {
+
+        System.out.println("listZero: " + "\n" + listZero);
+        int duplicates = Collections.frequency(listZero, "Zero");
+        System.out.println("\n" + "How frequently repeated Zero: " + "\n" + duplicates + "\n");
+        System.out.println("listEd: " + "\n" + listEd);
+        int duplicate = Collections.frequency(listEd, "Ed");
+        System.out.println("\n" + "How frequently repeated Ed: " + "\n" + duplicate + "\n");
+    }
 
 
-        System.out.println("Result of operations with List<Integer> listTwo:" + "\n" + listTwo + "\n");
-        System.out.println("contains number 5 or not: " + listTwo.contains(5));
-        System.out.println("index of number 9 is: " + listTwo.indexOf(9));
-        System.out.println("status of isEmpty: " + listTwo.isEmpty());
+    public void statusList() {
 
+        System.out.println("listZero: " + "\n" + listZero);
+        System.out.println("listZero: isEmpty?: " + listZero.isEmpty());
+        System.out.println("listZero: size of List: " + listZero.size());
+        System.out.println("listZero: contains word Ed or not?: " + listZero
+                .contains("Ed"));
+        System.out.println("listZero: index of word Ed is: " + listZero.indexOf("Ed") + "\n");
 
-        List<String> listThree = new ArrayList<>();
-        listThree.add("A");
-        listThree.add("B");
-        listThree.add("C");
-        listThree.add("D");
-        listThree.add("E");
-        listThree.add("F");
-        listThree.add("J");
-        listThree.remove("D");
-        listThree.remove(5);
+        System.out.println("listEd: " + "\n" + listEd);
+        System.out.println("listEd: isEmpty?: " + listEd.isEmpty());
+        System.out.println("listEd: size of List: " + listEd.size());
+        System.out.println("listEd: contains word Ed or not?: " + listEd
+                .contains("Ed"));
+        System.out.println("listEd: index of word Ed is: " + listEd.indexOf("Ed") + "\n");
+    }
 
-
-        System.out.println("\n" + "Result of operations with List<String> listThree:" + "\n" + listThree + "\n");
-        System.out.println("size of array: " + listThree.size());
-        System.out.println("index of A: " + listThree.indexOf("A"));
-        System.out.println("index of B: " + listThree.indexOf("B"));
-        System.out.println("index of C: " + listThree.indexOf("C"));
-        System.out.println("index of D: " + listThree.indexOf("D"));
-        System.out.println("index of E: " + listThree.indexOf("E"));
-        System.out.println("index of F: " + listThree.indexOf("F"));
-        System.out.println("index of J: " + listThree.indexOf("J"));
+    public void joinArrays() {
 
         // http://commons.apache.org/proper/commons-collections/download_collections.cgi
-        List<Integer> listOneTwo = ListUtils.union(listOne, listTwo);
-        System.out.println("\n" + "Result of UNION (listOne + listTwo):" + "\n" + listOneTwo + "\n");
-        Set<Object> listHS = new LinkedHashSet<>();
-        listHS.addAll(listOne);
-        listHS.addAll(listTwo);
-        System.out.println("\n" + "Result of LinkedHashSet (listOne + listTwo):" + "\n" + listHS + "\n");
 
+        List<Integer> listZeroEd = ListUtils.union(listZero, listEd);
+        System.out.println("\n" + "Result of UNION (listZero + listEd):" + "\n" + listZeroEd + "\n");
+
+
+        Set<String> listHS = new LinkedHashSet<>();
+        listHS.addAll(listZero);
+        listHS.addAll(listEd);
+        System.out.println("\n" + "Result of LinkedHashSet (listZero + listEd):" + "\n" + listHS + "\n");
 
     }
 }

@@ -2,17 +2,17 @@ package myArray;
 
 public class MatrixString {
 
-    public void matrString() {
-
-        String[][] matrixString = {
-                {"Dell"},
-                {"Sony", "Apple"},
-                {"ASUS", "Aceer", "HP"},
+    public static void matrString() {
+        System.out.println("\n" + "Matrix of String values:");
+        String[][] matrix = {
+                {"Dell", "HP", "MSI"},
+                {"Sony", "Apple", "Samsung"},
+                {"ASUS", "Acer", "Lenovo"},
         };
 
-        for (int i = 0; i < matrixString.length; i++) {
-            for (int j = 0; j < matrixString[i].length; j++) {
-                System.out.print(matrixString[i][j] + " ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ", ");
             }
             System.out.println();
         }

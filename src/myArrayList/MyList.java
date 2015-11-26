@@ -37,12 +37,14 @@ public class MyList {
 //        listTwo.remove(1);     // java.lang.UnsupportedOperationException
 //        listTwo.clear();       // java.lang.UnsupportedOperationException
 
-        System.out.println("List<Integer> listNum:" + "\n" + listNum + "\n");
+        System.out.println("\n" + "List<Integer> listNum:" + "\n" + listNum);
+        System.out.println("MIN: " + Collections.min(listNum));
+        System.out.println("MAX: " + Collections.max(listNum));
     }
 
     public void repeatedValue() {
 
-        System.out.println("listZero: " + "\n" + listZero);
+        System.out.println("\n" + "listZero: " + "\n" + listZero);
         int duplicates = Collections.frequency(listZero, "Zero");
         System.out.println("\n" + "How frequently repeated Zero: " + "\n" + duplicates + "\n");
         System.out.println("listEd: " + "\n" + listEd);
@@ -84,7 +86,7 @@ public class MyList {
     public void convertArray() {
         String[] myArray;
         myArray = listEd.toArray(new String[listEd.size()]);
-        System.out.println("List<String> listEd converted toArray: " + myArray);
+        System.out.println("\n" + "List<String> listEd converted toArray: " + myArray);
         System.out.println(Arrays.toString(myArray));
     }
 

@@ -8,6 +8,7 @@ public class MyList {
 
     private List<String> listZero = new ArrayList<>();
     private List<String> listEd = new ArrayList<>();
+    public static String[] text = {"нужно", "по", "первым", "символам", "найти", "все", "слова", "которые", "входят", "в", "строковый", "массив"};
 
     public void initializationZeroEd() {
 
@@ -25,7 +26,7 @@ public class MyList {
         listEd.add("Ed");
         listEd.remove(1);
         listZero.remove("Zero");
-        listZero.add("Ed");
+        listZero.set(1, "Ed");
     }
 
     public void initializationNum() {
@@ -48,7 +49,6 @@ public class MyList {
         int duplicate = Collections.frequency(listEd, "Ed");
         System.out.println("\n" + "How frequently repeated Ed: " + "\n" + duplicate + "\n");
     }
-
 
     public void statusList() {
 
@@ -78,7 +78,25 @@ public class MyList {
         Set<String> listHS = new LinkedHashSet<>();
         listHS.addAll(listZero);
         listHS.addAll(listEd);
-        System.out.println("\n" + "Result of LinkedHashSet (listZero + listEd):" + "\n" + listHS + "\n");
-
+        System.out.print("\n" + "Result of LinkedHashSet (listZero + listEd):" + "\n" + listHS + "\n");
     }
+
+    public void convertArray() {
+        String[] myArray;
+        myArray = listEd.toArray(new String[listEd.size()]);
+        System.out.println("List<String> listEd converted toArray: " + myArray);
+        System.out.println(Arrays.toString(myArray));
+    }
+
+    public static ArrayList<String> searchText(String[] inputArray, String searchText) {
+
+        ArrayList<String> outputArray = new ArrayList<>();
+        for (int i = 0; i < inputArray.length; i++) {
+            if (searchText.compareToIgnoreCase(inputArray[i].substring(0, searchText.length())) == 0) {
+                outputArray.add(inputArray[i]);
+            }
+        }
+        return outputArray;
+    }
+
 }

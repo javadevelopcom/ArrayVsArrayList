@@ -23,10 +23,11 @@ public class Main {
         }
 
         Array1D.arr1d();
+        ArrayMinMax.arMinMax();
         ArrayFill.arFill();
         RandomArray.arRandom();
         Array2D.arr2d();
-        Matrix.matr();
+        MatrixMinMax.matrixMinMax();
         MatrixFill.matrFill();
         MatrixString.matrString();
         ParallelArrays.arrParallel();
@@ -35,7 +36,7 @@ public class Main {
         BreakBooleanSearch.searchBreak(BreakBooleanSearch.MY_ARRAY, 4);
         BinarySearch.binarySearch(BinarySearch.MY_ARRAY, 0, 10, 77);
 
-        System.out.println("\n" + "Binary search (Arrays.binarySearch) of key value (100):" + "\n" + Arrays.binarySearch(BinarySearch.MY_ARRAY, 100) + "\n");
+        Print.ln("\n" + "Binary search (Arrays.binarySearch) of key value (100):" + "\n" + Arrays.binarySearch(BinarySearch.MY_ARRAY, 100) + "\n");
 
 
         try {
@@ -51,6 +52,10 @@ public class Main {
         go.repeatedValue();
         go.joinArrays();
         go.initializationNum();
+        go.convertArray();
+
+        Print.ln("\n" + "TEXT: " + Arrays.toString(MyList.text));
+        Print.ln("\n" + "KEY (н): " + (go.searchText(MyList.text, "н")));
 
     }/* ВЫЗОВ МЕТОДОВ */
 

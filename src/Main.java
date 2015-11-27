@@ -38,6 +38,9 @@ public class Main {
 
         Print.ln("\n" + "Binary search (Arrays.binarySearch) of key value (100):" + "\n" + Arrays.binarySearch(BinarySearch.MY_ARRAY, 100) + "\n");
 
+        ArrayStreams.arrayOperations();
+
+        Print.ln("\n" + "__________________________________________________________" + "\n");
 
         try {
             Banr.banr();
@@ -45,17 +48,19 @@ public class Main {
             e.printStackTrace();
         }
         Print.ln("\n");
+
         MyList go = new MyList();
 
         go.initializationZeroEd();
         go.statusList();
         go.repeatedValue();
-        go.joinArrays();
-        go.initializationNum();
-        go.convertArray();
+        go.joinLists();
+        go.convertToArray();
 
         Print.ln("\n" + "TEXT: " + Arrays.toString(MyList.text));
         Print.ln("\n" + "KEY (н): " + (go.searchText(MyList.text, "н")));
+
+        go.operationsNumList();
 
     }/* ВЫЗОВ МЕТОДОВ */
 

@@ -29,7 +29,7 @@ public class MyList {
         listZero.set(1, "Ed");
     }
 
-    public void initializationNum() {
+    public void operationsNumList() {
 
         List<Integer> listNum = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         listNum.set(0, 100);
@@ -37,44 +37,55 @@ public class MyList {
 //        listTwo.remove(1);     // java.lang.UnsupportedOperationException
 //        listTwo.clear();       // java.lang.UnsupportedOperationException
 
-        System.out.println("\n" + "List<Integer> listNum:" + "\n" + listNum);
-        System.out.println("MIN: " + Collections.min(listNum));
-        System.out.println("MAX: " + Collections.max(listNum));
+        print("\n" + "List<Integer> listNum:" + "\n" + listNum + "\n");
+        Collections.shuffle(listNum);
+        print("After SHUFFLING:" + "\n" + listNum);
+        Collections.sort(listNum);
+        print("After SORTING:" + "\n" + listNum);
+        Collections.reverse(listNum);
+        print("After REVERSE SORTING:" + "\n" + listNum);
+        print("SIZE: " + listNum.size());
+//double sum = listNum.
+        double average = listNum.stream().mapToDouble(value -> value).average().getAsDouble();
+        print("AVERAGE: " + average);
+        print("MIN: " + Collections.min(listNum));
+        print("MAX: " + Collections.max(listNum));
     }
+
 
     public void repeatedValue() {
 
-        System.out.println("\n" + "listZero: " + "\n" + listZero);
+        print("\n" + "listZero: " + "\n" + listZero);
         int duplicates = Collections.frequency(listZero, "Zero");
-        System.out.println("\n" + "How frequently repeated Zero: " + "\n" + duplicates + "\n");
-        System.out.println("listEd: " + "\n" + listEd);
+        print("\n" + "How frequently repeated Zero: " + "\n" + duplicates + "\n");
+        print("listEd: " + "\n" + listEd);
         int duplicate = Collections.frequency(listEd, "Ed");
-        System.out.println("\n" + "How frequently repeated Ed: " + "\n" + duplicate + "\n");
+        print("\n" + "How frequently repeated Ed: " + "\n" + duplicate + "\n");
     }
 
     public void statusList() {
 
-        System.out.println("listZero: " + "\n" + listZero);
-        System.out.println("listZero: isEmpty?: " + listZero.isEmpty());
-        System.out.println("listZero: size of List: " + listZero.size());
-        System.out.println("listZero: contains word Ed or not?: " + listZero
+        print("listZero: " + "\n" + listZero);
+        print("listZero: isEmpty?: " + listZero.isEmpty());
+        print("listZero: size of List: " + listZero.size());
+        print("listZero: contains word Ed or not?: " + listZero
                 .contains("Ed"));
-        System.out.println("listZero: index of word Ed is: " + listZero.indexOf("Ed") + "\n");
+        print("listZero: index of word Ed is: " + listZero.indexOf("Ed") + "\n");
 
-        System.out.println("listEd: " + "\n" + listEd);
-        System.out.println("listEd: isEmpty?: " + listEd.isEmpty());
-        System.out.println("listEd: size of List: " + listEd.size());
-        System.out.println("listEd: contains word Ed or not?: " + listEd
+        print("listEd: " + "\n" + listEd);
+        print("listEd: isEmpty?: " + listEd.isEmpty());
+        print("listEd: size of List: " + listEd.size());
+        print("listEd: contains word Ed or not?: " + listEd
                 .contains("Ed"));
-        System.out.println("listEd: index of word Ed is: " + listEd.indexOf("Ed") + "\n");
+        print("listEd: index of word Ed is: " + listEd.indexOf("Ed") + "\n");
     }
 
-    public void joinArrays() {
+    public void joinLists() {
 
         // http://commons.apache.org/proper/commons-collections/download_collections.cgi
 
         List<Integer> listZeroEd = ListUtils.union(listZero, listEd);
-        System.out.println("\n" + "Result of UNION (listZero + listEd):" + "\n" + listZeroEd + "\n");
+        print("\n" + "Result of UNION (listZero + listEd):" + "\n" + listZeroEd + "\n");
 
 
         Set<String> listHS = new LinkedHashSet<>();
@@ -83,11 +94,11 @@ public class MyList {
         System.out.print("\n" + "Result of LinkedHashSet (listZero + listEd):" + "\n" + listHS + "\n");
     }
 
-    public void convertArray() {
+    public void convertToArray() {
         String[] myArray;
         myArray = listEd.toArray(new String[listEd.size()]);
-        System.out.println("\n" + "List<String> listEd converted toArray: " + myArray);
-        System.out.println(Arrays.toString(myArray));
+        print("\n" + "List<String> listEd converted toArray: " + myArray);
+        print(Arrays.toString(myArray));
     }
 
     public static ArrayList<String> searchText(String[] inputArray, String searchText) {
@@ -101,4 +112,7 @@ public class MyList {
         return outputArray;
     }
 
+    public void print(String x) {
+        System.out.println(x);
+    }
 }

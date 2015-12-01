@@ -53,6 +53,7 @@ public class Main {
 
         go.initializationZeroEd();
         go.statusList();
+        go.listValue();
         go.repeatedValue();
         go.joinLists();
         go.convertToArray();

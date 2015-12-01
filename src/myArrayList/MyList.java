@@ -29,6 +29,12 @@ public class MyList {
         listZero.set(1, "Ed");
     }
 
+    public void listValue() {
+
+        print("listZero value of index [0]: " + listZero.get(0));
+        print("listEd value of index [1]: " + listEd.get(1));
+    }
+
     public void operationsNumList() {
 
         List<Integer> listNum = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
